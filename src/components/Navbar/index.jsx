@@ -53,13 +53,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar({ pokemonFilter }) {
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: '1em' }}>
-      <AppBar position="static" sx={{backgroundColor:"black"}}>
-        <Toolbar>
-          <Box display='flex' justifyContent='space-between' width='100%' >
+    <Box sx={{ flexGrow: 1, marginBottom: '2em' }}>
+    <AppBar sx={{backgroundColor:"black"}}>
+      <Toolbar sx={{margin: '0px'}} >
+        <Box display='flex' justifyContent='space-between' width='100%' alignItems="center">
           <Box maxWidth={137} component="img" src='/pokemon-png-logo.webp'/>
           <Search onChange={(e)=>pokemonFilter(e.target.value)}>
-            <SearchIconWrapper>
+            <SearchIconWrapper style={{ marginRight: '0.5em' }}>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
@@ -67,9 +67,9 @@ export default function Navbar({ pokemonFilter }) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          </Box>
-        </Toolbar>
-      </AppBar>
-    </Box>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  </Box>
   );
 }
